@@ -137,6 +137,10 @@ var valor_perdedora;
 var valor_vencedora;
 var performance_zerada=0;
 
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+}, false);
+				       
 setInterval(function(){ 
 
 fetch(`https://economia.awesomeapi.com.br/all/USD-BRL`)
