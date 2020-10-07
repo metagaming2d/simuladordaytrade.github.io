@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <title>Simulador de Day Trade - FOREX - Dolar </title>
