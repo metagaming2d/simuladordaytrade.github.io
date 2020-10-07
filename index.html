@@ -150,7 +150,7 @@ valor_pip=(0,0001/bid).toFixed(2);
 if (compra) { var resultado=bid-getask;
 
 saldo_final=resultado*valor_pip*1000*getquant;
-saldo_final=(saldo_final*bid).toFixed(2);
+saldo_final=(saldo_final*bid).toFixed(0);
 saldo.innerHTML="R$ "+saldo_final;
 if (saldo_final < 0) 
 {
@@ -170,7 +170,7 @@ if (saldo_final < 0)
 if (venda) { var resultado=getbid-ask;
 
 saldo_final=resultado*valor_pip*1000*getquant;
-saldo_final=(saldo_final*bid).toFixed(2);
+saldo_final=(saldo_final*bid).toFixed(0);
 saldo.innerHTML="R$ "+saldo_final;
 
 
@@ -188,7 +188,7 @@ if (saldo_final < 0) {
 
       })
 
- }, 100);
+ }, 10);
 
 function fcompra() {
 
