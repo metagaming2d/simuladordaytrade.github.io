@@ -85,7 +85,7 @@ input[type="submit"][disabled]:hover
 <br>
 <div align="left">
  <label for="quantity">Micro Lotes (x1000):</label>
-  <input type="number" id="quantity" name="quantity" min="1" max="1000" value="10";>
+  <input type="number" id="quantity" name="quantity" min="1" max="100000" value="10";>
   <h4 id="posicao">Posição: Zerado </h4>
 </div>
 
@@ -277,7 +277,7 @@ if (getresult < 0) {
 saldo_final=0;
 posicao.innerHTML="Posição: Zerado";
 document.getElementById("saldo").style.backgroundColor = '#FFFFFFFF';
-document.getElementById("result_fechado").style.color = 'black';
+document.getElementById("saldo").style.color = '#000000';
 
 compra=false;
 venda=false;
