@@ -263,15 +263,15 @@ saldo.innerHTML="R$ 0,00";
 if (getresult < 0) {
 
  document.getElementById("result_fechado").style.backgroundColor = 'red';
- document.getElementById("saldo").style.color = 'white';
+ document.getElementById("result_fechado").style.color = 'white';
 
 } else if (getresult > 0) {
    document.getElementById("result_fechado").style.backgroundColor = 'green';
-   document.getElementById("saldo").style.color = 'white';
+   document.getElementById("result_fechado").style.color = 'white';
 
         } else {
           document.getElementById("result_fechado").style.backgroundColor = '#FFFFFFFF';
-	  document.getElementById("saldo").style.color = '#000000';
+	  document.getElementById("result_fechado").style.color = '#000000';
         }
 
 saldo_final=0;
