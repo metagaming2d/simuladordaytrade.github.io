@@ -1,2 +1,2 @@
-# site2app.github.io
-Transforme seu site em um aplicativo Android na PlayStore
+simuladordaytrade.github.io
+Simulador de Day Trade - FOREX USD/BRL
