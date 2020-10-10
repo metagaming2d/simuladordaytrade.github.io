@@ -20,6 +20,39 @@
   <title>Simulador Day Trade</title>  
 
 <link href="./main.82cfd66e.css" rel="stylesheet"></head>
+<script>
+    function run() {
+     //   document.getElementById("srt").value = document.getElementById("Ultra").value;
+var moeda_par = document.getElementById("par_moeda").value;
+        if ( moeda_par == "usd") {
+          window.location="index.html";
+        } else if ( moeda_par == "cad") {
+
+          window.location="cad.html";
+        } else if ( moeda_par == "eur") {
+
+          window.location="eur.html";
+        } else if ( moeda_par == "gbp") {
+
+          window.location="gbp.html";
+        } else if ( moeda_par == "ars") {
+
+          window.location="ars.html";
+        } else if ( moeda_par == "chf") {
+
+          window.location="chf.html";
+        } else if ( moeda_par == "aud") {
+
+          window.location="aud.html";
+        } else if ( moeda_par == "cny") {
+
+          window.location="cny.html";
+        } else if ( moeda_par == "ils") {
+
+          window.location="ils.html";
+        } 
+    }
+</script>
 
 <body>
 
@@ -42,8 +75,21 @@
             <img class="img-responsive site-logo" alt="" src="./logo.svg">
             Simulador de Day Trade
           </a>
-        <p>Grátis, online, sem cadastro, sem instalação
+            <p>Par de moedas:
         </p>
+        <select id="par_moeda" onchange="run()">  <!--Call run() function-->
+    <option hidden disabled selected value> --/-- </option>
+     <option value="usd">USD/BRL</option>
+     <option value="cad">CAD/BRL</option>
+     <option value="eur">EUR/BRL</option>
+     <option value="gbp">GBP/BRL</option>
+     <option value="ars">ARS/BRL</option>
+     <option value="chf">CHF/BRL</option>
+     <option value="aud">AUD/BRL</option>
+     <option value="cny">CNY/BRL</option>
+     <option value="ils">ILS/BRL</option>
+
+</select>
       </div>
       <ul class="nav">
         <li><a href="./index.html" title="">Home</a></li>

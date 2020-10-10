@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
+  <script data-ad-client="ca-pub-4884947705785607" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="Simnulador de Day Trade" name="Simulador de Day Trade">
+  <meta content="Page description" name="description">
   <meta name="google" content="notranslate" />
-  <meta content="" name="@trader.choice">
+  <meta content="Mashup templates have been developped by Orson.io team" name="author">
 
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no">
@@ -99,6 +100,7 @@ input[type="submit"][disabled]:hover
   background-color: #ddd;
   background: #ddd;
 }
+.header-menu {background-color: blue;}
 .result_value {background-color: #0099FF; }
 .button1 {background-color: #0099FF; } /* Azul */
 .button2 {background-color: #f44336;} /* Vermelho */
@@ -106,11 +108,6 @@ input[type="submit"][disabled]:hover
 .button1:hover {box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); }
 .button2:hover { box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); }
 .button3:hover { box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19); }
-.header-menu {background-color: blue;}
-header
-{
-    background-color:#ECF3F3;
-}
 </style>
 
 
@@ -124,7 +121,7 @@ header
 <header class="header-menu">
   <div class="navbar navbar-default visible-xs">
     <button type="button" class="navbar-toggle collapsed">
-      <span class="sr-only">Menu</span>
+      <span class="sr-only">Toggle navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
@@ -139,11 +136,11 @@ header
             <img class="img-responsive site-logo" alt="" src="./logo.svg">
             Simulador de Day Trade
           </a>
-        <p>Par de moedas:
+         <p>Par de moedas:
         </p>
         <select id="par_moeda" onchange="run()">  <!--Call run() function-->
-     <option value="usd" selected="selected">USD/BRL</option>
-     <option value="cad">CAD/BRL</option>
+     <option value="usd">USD/BRL</option>
+     <option value="cad" selected="selected">CAD/BRL</option>
      <option value="eur">EUR/BRL</option>
      <option value="gbp">GBP/BRL</option>
      <option value="ars">ARS/BRL</option>
@@ -185,9 +182,9 @@ header
 <!-- Add your site or app content here -->
  
 <body>
-  <h4>Simulador de Day Trade - FOREX USD/BRL - Funcionamento: 9h as 18h UTC-3</h4>
+  <h4>Simulador de Day Trade - FOREX CAD/BRL UTC-3</h4>
 <div>
-<iframe height="480" width="650" frameBorder="0" src="https://ssltvc.forexprostools.com/?pair_ID=2103&height=480&width=650&interval=300&plotStyle=candles&domain_ID=30&lang_ID=12&timezone_ID=10"></iframe>
+<iframe height="480" width="650" frameBorder="0" src="https://ssltvc.forexprostools.com/?pair_ID=1523&height=480&width=650&interval=300&plotStyle=candles&domain_ID=30&lang_ID=12&timezone_ID=10"></iframe>
 </div>
 <div id="chartrading">
 
@@ -225,47 +222,46 @@ header
 </div>
 
 <script>
-var ask_compra = document.getElementById("button1");
-var bid_venda = document.getElementById("button2");
-var posicao = document.getElementById("posicao");
-var saldo=document.getElementById("saldo");
-var result_fechado1=document.getElementById("result_fechado");
-var ask;
-var bid;
-var getask;
-var getbid;
-var compra;
-var venda;
-var zerar;
-var resultado;
-var result;
-var getresult=0;
-var quantidade ;
-var getquant;
-var saldo_final;
-var valor_pip;
-var negocios=document.getElementById("nr_nego");
-var performance=document.getElementById("performance");
-var nr_negocios=0
-var performance_vencedora=0;
-var performance_perdedora=0;
-var valor_perdedora;
-var valor_vencedora;
-var performance_zerada=0;
+var ask_compra_cad = document.getElementById("button1");
+var bid_venda_cad = document.getElementById("button2");
+var posicao_cad = document.getElementById("posicao");
+var saldo_cad=document.getElementById("saldo");
+var result_fechado1_cad=document.getElementById("result_fechado");
+var ask_cad;
+var bid_cad;
+var getask_cad;
+var getbid_cad;
+var compra_cad;
+var venda_cad;
+var zerar_cad;
+var resultado_cad;
+var result_cad;
+var getresult_cad=0;
+var quantidade_cad ;
+var getquant_cad;
+var saldo_final_cad;
+var valor_pip_cad;
+var negocios_cad=document.getElementById("nr_nego");
+var performance_cad=document.getElementById("performance");
+var nr_negocios_cad=0
+var performance_vencedora_cad=0;
+var performance_perdedora_cad=0;
+var valor_perdedora_cad;
+var valor_vencedora_cad;
+var performance_zerada_cad=0;
 
 
-
-if (sessionStorage.saldo_anterior) {
+if (sessionStorage.saldo_anterior_cad) {
  // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
- result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
+ result_fechado1_cad.innerHTML="R$ "+Number(sessionStorage.saldo_anterior_cad);
 }
 
-if (Number(sessionStorage.saldo_anterior) < 0) {
+if (Number(sessionStorage.saldo_anterior_cad) < 0) {
 
  document.getElementById("result_fechado").style.backgroundColor = 'red';
  document.getElementById("result_fechado").style.color = 'white';
 
-} else if (Number(sessionStorage.saldo_anterior) > 0) {
+} else if (Number(sessionStorage.saldo_anterior_cad) > 0) {
    document.getElementById("result_fechado").style.backgroundColor = 'green';
    document.getElementById("result_fechado").style.color = 'white';
 
@@ -276,70 +272,70 @@ if (Number(sessionStorage.saldo_anterior) < 0) {
 
 //saldo_final=Number(localStorage.saldo_anterior);
  
-if (sessionStorage.posicao_vendido) {
-  compra=false;
-  venda=true;
-  bid_venda.disabled = true;
-  posicao.innerHTML="Posição: "+Number(sessionStorage.posicao_quant)+" Micro Lote(s),"+" Vendido a "+Number(sessionStorage.posicao_vendido);
+if (sessionStorage.posicao_vendido_cad) {
+  compra_cad=false;
+  venda_cad=true;
+  bid_venda_cad.disabled = true;
+  posicao_cad.innerHTML="Posição: "+Number(sessionStorage.posicao_quant_cad)+" Micro Lote(s),"+" Vendido a "+Number(sessionStorage.posicao_vendido_cad);
 }
 
-if (sessionStorage.posicao_comprado) {
+if (sessionStorage.posicao_comprado_cad) {
 
 
-  compra=true;
-  venda=false;
-  ask_compra.disabled=true;
-  posicao.innerHTML="Posição: "+Number(sessionStorage.posicao_quant)+" Micro Lote(s),"+" Comprado a "+Number(sessionStorage.posicao_comprado);
+  compra_cad=true;
+  venda_cad=false;
+  ask_compra_cad.disabled=true;
+  posicao_cad.innerHTML="Posição: "+Number(sessionStorage.posicao_quant_cad)+" Micro Lote(s),"+" Comprado a "+Number(sessionStorage.posicao_comprado_cad);
 
 }
 
 
-if (sessionStorage.nr_negocios) {
+if (sessionStorage.nr_negocios_cad) {
 
 
- nr_negocios=Number(sessionStorage.nr_negocios);
- performance_vencedora=Number(sessionStorage.performance_vencedora);
- performance_perdedora=Number(sessionStorage.performance_perdedora);
- negocios.innerHTML="Negociações: "+Number(sessionStorage.nr_negocios);
- performance.innerHTML="Vencedoras: "+Number(sessionStorage.performance_vencedora)+" ("+Number(sessionStorage.valor_vencedora)+"%)"+", Perdedoras: "+Number(sessionStorage.performance_perdedora)+" ("+Number(sessionStorage.valor_perdedora)+"%)";
+ nr_negocios_cad=Number(sessionStorage.nr_negocios_cad);
+ performance_vencedora_cad=Number(sessionStorage.performance_vencedora_cad);
+ performance_perdedora_cad=Number(sessionStorage.performance_perdedora_cad);
+ negocios_cad.innerHTML="Negociações: "+Number(sessionStorage.nr_negocios_cad);
+ performance_cad.innerHTML="Vencedoras: "+Number(sessionStorage.performance_vencedora_cad)+" ("+Number(sessionStorage.valor_vencedora_cad)+"%)"+", Perdedoras: "+Number(sessionStorage.performance_perdedora_cad)+" ("+Number(sessionStorage.valor_perdedora_cad)+"%)";
 
 }
 
 setInterval(function(){ 
 
-fetch(`https://economia.awesomeapi.com.br/all/USD-BRL`)
+fetch(`https://economia.awesomeapi.com.br/all/CAD-BRL`)
 .then(response => response.json())
- .then(data => {  ask_compra.innerHTML="Comprar (ask)<br>"+data['USD']['ask']
-                  bid_venda.innerHTML="Vender (bid)<br>"+data['USD']['bid']
-                  ask=parseFloat(data['USD']['ask'])
-                  bid=parseFloat(data['USD']['bid'])
-valor_pip=(0,0001/bid).toFixed(2);
+ .then(data => {  ask_compra_cad.innerHTML="Comprar (ask)<br>"+data['CAD']['ask']
+                  bid_venda_cad.innerHTML="Vender (bid)<br>"+data['CAD']['bid']
+                  ask_cad=parseFloat(data['CAD']['ask'])
+                  bid_cad=parseFloat(data['CAD']['bid'])
+valor_pip_cad=(0,0001/bid_cad).toFixed(2);
 
 
 
 
-if (compra) { 
+if (compra_cad) { 
 
-if (sessionStorage.posicao_comprado) {
+if (sessionStorage.posicao_comprado_cad) {
 
-resultado=bid-parseFloat(Number(sessionStorage.posicao_comprado));
-getquant=Number(sessionStorage.posicao_quant);
+resultado_cad=bid_cad-parseFloat(Number(sessionStorage.posicao_comprado_cad));
+getquant_cad=Number(sessionStorage.posicao_quant_cad);
 
 } else {
-resultado=bid-getask;
+resultado_cad=bid_cad-getask_cad;
 }
 
 
-saldo_final=resultado*valor_pip*1000*getquant;
-saldo_final=(saldo_final*bid).toFixed(2);
-saldo.innerHTML="R$ "+saldo_final;
-if (saldo_final < 0) 
+saldo_final_cad=resultado_cad*valor_pip_cad*1000*getquant_cad;
+saldo_final_cad=(saldo_final_cad*bid_cad).toFixed(2);
+saldo_cad.innerHTML="R$ "+saldo_final_cad;
+if (saldo_final_cad < 0) 
 {
 
  document.getElementById("saldo").style.backgroundColor = 'red';
  document.getElementById("saldo").style.color = 'white';
 
-} else if (saldo_final > 0) {
+} else if (saldo_final_cad > 0) {
 
    document.getElementById("saldo").style.backgroundColor = 'green';
    document.getElementById("saldo").style.color = 'white';
@@ -349,27 +345,27 @@ if (saldo_final < 0)
         }
       }
 
-if (venda) {
+if (venda_cad) {
 
-  if (sessionStorage.posicao_vendido) {
+  if (sessionStorage.posicao_vendido_cad) {
 
 
-    resultado=parseFloat(Number(sessionStorage.posicao_vendido))-ask;
-    getquant=Number(sessionStorage.posicao_quant);
+    resultado_cad=parseFloat(Number(sessionStorage.posicao_vendido_cad))-ask_cad;
+    getquant_cad=Number(sessionStorage.posicao_quant_cad);
   } else {
-    var resultado=getbid-ask;
+    var resultado_cad=getbid-ask_cad;
   }
-saldo_final=resultado*valor_pip*1000*getquant;
-saldo_final=(saldo_final*bid).toFixed(2);
+saldo_final_cad=resultado_cad*valor_pip_cad*1000*getquant_cad;
+saldo_final_cad=(saldo_final_cad*bid_cad).toFixed(2);
 
-saldo.innerHTML="R$ "+saldo_final;
+saldo_cad.innerHTML="R$ "+saldo_final_cad;
 
 
-if (saldo_final < 0) {
+if (saldo_final_cad < 0) {
 
  document.getElementById("saldo").style.backgroundColor = 'red';
  document.getElementById("saldo").style.color = 'white';
-} else if (saldo_final > 0) {
+} else if (saldo_final_cad > 0) {
    document.getElementById("saldo").style.backgroundColor = 'green';
    document.getElementById("saldo").style.color = 'white';
 
@@ -386,39 +382,39 @@ if (saldo_final < 0) {
 
 function fcompra() {
 
-  if (venda) {
+  if (venda_cad) {
 
     fzerar();
   } else {
-  getquant=document.getElementById("quantity").value;
-  compra=true;
-  venda=false;
-  getask=ask;
-  ask_compra.disabled = true;
+  getquant_cad=document.getElementById("quantity").value;
+  compra_cad=true;
+  venda_cad=false;
+  getask_cad=ask_cad;
+  ask_compra_cad.disabled = true;
  // bid_venda.disabled = true;
-  posicao.innerHTML="Posição: "+getquant+" Micro Lote(s),"+" Comprado a "+getask;
-  sessionStorage.posicao_comprado=getask;
-  sessionStorage.posicao_quant=getquant;
+  posicao_cad.innerHTML="Posição: "+getquant_cad+" Micro Lote(s),"+" Comprado a "+getask_cad;
+  sessionStorage.posicao_comprado_cad=getask_cad;
+  sessionStorage.posicao_quant_cad=getquant_cad;
 
   }
 }
 
 function fvenda() {
 
-if (compra) {
+if (compra_cad) {
 
 fzerar();
 
 } else {
-  getquant=document.getElementById("quantity").value;
-  compra=false;
-  venda=true;
-  getbid=bid;
+  getquant_cad=document.getElementById("quantity").value;
+  compra_cad=false;
+  venda_cad=true;
+  getbid_cad=bid_cad;
 //  ask_compra.disabled = true;
-  bid_venda.disabled = true;
-  posicao.innerHTML="Posição: "+getquant+" Micro Lote(s),"+" Vendido a "+getbid;
-  sessionStorage.posicao_vendido=getbid;
-  sessionStorage.posicao_quant=getquant;
+  bid_venda_cad.disabled = true;
+  posicao_cad.innerHTML="Posição: "+getquant_cad+" Micro Lote(s),"+" Vendido a "+getbid_cad;
+  sessionStorage.posicao_vendido_cad=getbid_cad;
+  sessionStorage.posicao_quant_cad=getquant_cad;
 
 
       }
@@ -429,50 +425,50 @@ function fzerar() {
 
 var fzerar=true;
 
-nr_negocios+=1;
-sessionStorage.nr_negocios=nr_negocios;
+nr_negocios_cad+=1;
+sessionStorage.nr_negocios_cad=nr_negocios_cad;
 
-if (saldo_final > 0) {
+if (saldo_final_cad > 0) {
   
-  performance_vencedora+=1;
-  valor_vencedora=parseFloat(performance_vencedora/nr_negocios*100).toFixed(2);
-  valor_perdedora=(100-valor_vencedora).toFixed(2);
-  } else if (saldo_final < 0) {
-  performance_perdedora+=1;
-  valor_perdedora=parseFloat(performance_perdedora/nr_negocios*100).toFixed(2);
-  valor_vencedora=(100-valor_perdedora).toFixed(2);
+  performance_vencedora_cad+=1;
+  valor_vencedora_cad=parseFloat(performance_vencedora_cad/nr_negocios_cad*100).toFixed(2);
+  valor_perdedora_cad=(100-valor_vencedora_cad).toFixed(2);
+  } else if (saldo_final_cad < 0) {
+  performance_perdedora_cad+=1;
+  valor_perdedora_cad=parseFloat(performance_perdedora_cad/nr_negocios_cad*100).toFixed(2);
+  valor_vencedora_cad=(100-valor_perdedora_cad).toFixed(2);
 } else {
 
-  performance_zerada+=1;
+  performance_zerada_cad+=1;
 }
 
- sessionStorage.valor_vencedora=valor_vencedora;
- sessionStorage.valor_perdedora=valor_perdedora;
- sessionStorage.performance_perdedora=performance_perdedora;
- sessionStorage.performance_vencedora=performance_vencedora;
- negocios.innerHTML="Negociações: "+nr_negocios;
- performance.innerHTML="Vencedoras: "+performance_vencedora+" ("+valor_vencedora+"%)"+", Perdedoras: "+performance_perdedora+" ("+valor_perdedora+"%)";
+ sessionStorage.valor_vencedora_cad=valor_vencedora_cad;
+ sessionStorage.valor_perdedora_cad=valor_perdedora_cad;
+ sessionStorage.performance_perdedora_cad=performance_perdedora_cad;
+ sessionStorage.performance_vencedora_cad=performance_vencedora_cad;
+ negocios_cad.innerHTML="Negociações: "+nr_negocios_cad;
+ performance_cad.innerHTML="Vencedoras: "+performance_vencedora_cad+" ("+valor_vencedora_cad+"%)"+", Perdedoras: "+performance_perdedora_cad+" ("+valor_perdedora_cad+"%)";
 
-getresult=parseFloat(getresult)+parseFloat(saldo_final);
+getresult_cad=parseFloat(getresult_cad)+parseFloat(saldo_final_cad);
 
-if (sessionStorage.saldo_anterior) {
+if (sessionStorage.saldo_anterior_cad) {
  // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
  //result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
- getresult=parseFloat(getresult)+Number(sessionStorage.saldo_anterior);
+ getresult_cad=parseFloat(getresult_cad)+Number(sessionStorage.saldo_anterior_cad);
 }
 
-result_fechado1.innerHTML="R$ "+getresult.toFixed(2);//+",00";
-sessionStorage.saldo_anterior=getresult.toFixed(2);
-ask_compra.disabled = false;
-bid_venda.disabled = false;///}
-saldo.innerHTML="R$ 0,00";
+result_fechado1_cad.innerHTML="R$ "+getresult_cad.toFixed(2);//+",00";
+sessionStorage.saldo_anterior_cad=getresult_cad.toFixed(2);
+ask_compra_cad.disabled = false;
+bid_venda_cad.disabled = false;///}
+saldo_cad.innerHTML="R$ 0,00";
 
-if (getresult < 0) {
+if (getresult_cad < 0) {
 
  document.getElementById("result_fechado").style.backgroundColor = 'red';
  document.getElementById("result_fechado").style.color = 'white';
 
-} else if (getresult > 0) {
+} else if (getresult_cad > 0) {
    document.getElementById("result_fechado").style.backgroundColor = 'green';
    document.getElementById("result_fechado").style.color = 'white';
 
@@ -481,16 +477,16 @@ if (getresult < 0) {
     document.getElementById("result_fechado").style.color = 'black';
         }
 
-saldo_final=0;
-posicao.innerHTML="Posição: Zerado";
+saldo_final_cad=0;
+posicao_cad.innerHTML="Posição: Zerado";
 document.getElementById("saldo").style.backgroundColor = '#FFFFFFFF';
 document.getElementById("saldo").style.color = '#000000';
 
-sessionStorage.removeItem("posicao_vendido");
-sessionStorage.removeItem("posicao_comprado");
-sessionStorage.removeItem("posicao_quant");
-compra=false;
-venda=false;
+sessionStorage.removeItem("posicao_vendido_cad");
+sessionStorage.removeItem("posicao_comprado_cad");
+sessionStorage.removeItem("posicao_quant_cad");
+compra_cad=false;
+venda_cad=false;
 }
 
 </script>
