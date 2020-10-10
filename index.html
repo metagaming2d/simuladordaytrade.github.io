@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <script data-ad-client="ca-pub-4884947705785607" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width,initial-scale=1" name="viewport">
@@ -205,7 +204,57 @@ var valor_perdedora;
 var valor_vencedora;
 var performance_zerada=0;
 
-             
+
+if (sessionStorage.saldo_anterior) {
+ // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
+ result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
+}
+
+if (Number(sessionStorage.saldo_anterior) < 0) {
+
+ document.getElementById("result_fechado").style.backgroundColor = 'red';
+ document.getElementById("result_fechado").style.color = 'white';
+
+} else if (Number(sessionStorage.saldo_anterior) > 0) {
+   document.getElementById("result_fechado").style.backgroundColor = 'green';
+   document.getElementById("result_fechado").style.color = 'white';
+
+        } else {
+          document.getElementById("result_fechado").style.backgroundColor = '#FFFFFFFF';
+    document.getElementById("result_fechado").style.color = 'black';
+        }
+
+//saldo_final=Number(localStorage.saldo_anterior);
+ 
+if (sessionStorage.posicao_vendido) {
+  compra=false;
+  venda=true;
+  bid_venda.disabled = true;
+  posicao.innerHTML="Posição: "+Number(sessionStorage.posicao_quant)+" Micro Lote(s),"+" Vendido a "+Number(sessionStorage.posicao_vendido);
+}
+
+if (sessionStorage.posicao_comprado) {
+
+
+  compra=true;
+  venda=false;
+  ask_compra.disabled=true;
+  posicao.innerHTML="Posição: "+Number(sessionStorage.posicao_quant)+" Micro Lote(s),"+" Comprado a "+Number(sessionStorage.posicao_comprado);
+
+}
+
+
+if (sessionStorage.nr_negocios) {
+
+
+ nr_negocios=Number(sessionStorage.nr_negocios);
+ performance_vencedora=Number(sessionStorage.performance_vencedora);
+ performance_perdedora=Number(sessionStorage.performance_perdedora);
+ negocios.innerHTML="Negociações: "+Number(sessionStorage.nr_negocios);
+ performance.innerHTML="Vencedoras: "+Number(sessionStorage.performance_vencedora)+" ("+Number(sessionStorage.valor_vencedora)+"%)"+", Perdedoras: "+Number(sessionStorage.performance_perdedora)+" ("+Number(sessionStorage.valor_perdedora)+"%)";
+
+}
+
 setInterval(function(){ 
 
 fetch(`https://economia.awesomeapi.com.br/all/USD-BRL`)
@@ -215,7 +264,21 @@ fetch(`https://economia.awesomeapi.com.br/all/USD-BRL`)
                   ask=parseFloat(data['USD']['ask'])
                   bid=parseFloat(data['USD']['bid'])
 valor_pip=(0,0001/bid).toFixed(2);
-if (compra) { var resultado=bid-getask;
+
+
+
+
+if (compra) { 
+
+if (sessionStorage.posicao_comprado) {
+
+resultado=bid-parseFloat(Number(sessionStorage.posicao_comprado));
+getquant=Number(sessionStorage.posicao_quant);
+
+} else {
+resultado=bid-getask;
+}
+
 
 saldo_final=resultado*valor_pip*1000*getquant;
 saldo_final=(saldo_final*bid).toFixed(2);
@@ -236,10 +299,19 @@ if (saldo_final < 0)
         }
       }
 
-if (venda) { var resultado=getbid-ask;
+if (venda) {
 
+  if (sessionStorage.posicao_vendido) {
+
+
+    resultado=parseFloat(Number(sessionStorage.posicao_vendido))-ask;
+    getquant=Number(sessionStorage.posicao_quant);
+  } else {
+    var resultado=getbid-ask;
+  }
 saldo_final=resultado*valor_pip*1000*getquant;
 saldo_final=(saldo_final*bid).toFixed(2);
+
 saldo.innerHTML="R$ "+saldo_final;
 
 
@@ -275,6 +347,8 @@ function fcompra() {
   ask_compra.disabled = true;
  // bid_venda.disabled = true;
   posicao.innerHTML="Posição: "+getquant+" Micro Lote(s),"+" Comprado a "+getask;
+  sessionStorage.posicao_comprado=getask;
+  sessionStorage.posicao_quant=getquant;
 
   }
 }
@@ -293,6 +367,9 @@ fzerar();
 //  ask_compra.disabled = true;
   bid_venda.disabled = true;
   posicao.innerHTML="Posição: "+getquant+" Micro Lote(s),"+" Vendido a "+getbid;
+  sessionStorage.posicao_vendido=getbid;
+  sessionStorage.posicao_quant=getquant;
+
 
       }
 
@@ -303,6 +380,7 @@ function fzerar() {
 var fzerar=true;
 
 nr_negocios+=1;
+sessionStorage.nr_negocios=nr_negocios;
 
 if (saldo_final > 0) {
   
@@ -318,11 +396,23 @@ if (saldo_final > 0) {
   performance_zerada+=1;
 }
 
+ sessionStorage.valor_vencedora=valor_vencedora;
+ sessionStorage.valor_perdedora=valor_perdedora;
+ sessionStorage.performance_perdedora=performance_perdedora;
+ sessionStorage.performance_vencedora=performance_vencedora;
  negocios.innerHTML="Negociações: "+nr_negocios;
  performance.innerHTML="Vencedoras: "+performance_vencedora+" ("+valor_vencedora+"%)"+", Perdedoras: "+performance_perdedora+" ("+valor_perdedora+"%)";
 
 getresult=parseFloat(getresult)+parseFloat(saldo_final);
+
+if (sessionStorage.saldo_anterior) {
+ // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
+ //result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
+ getresult=parseFloat(getresult)+Number(sessionStorage.saldo_anterior);
+}
+
 result_fechado1.innerHTML="R$ "+getresult.toFixed(2);//+",00";
+sessionStorage.saldo_anterior=getresult.toFixed(2);
 ask_compra.disabled = false;
 bid_venda.disabled = false;///}
 saldo.innerHTML="R$ 0,00";
@@ -346,6 +436,9 @@ posicao.innerHTML="Posição: Zerado";
 document.getElementById("saldo").style.backgroundColor = '#FFFFFFFF';
 document.getElementById("saldo").style.color = '#000000';
 
+sessionStorage.removeItem("posicao_vendido");
+sessionStorage.removeItem("posicao_comprado");
+sessionStorage.removeItem("posicao_quant");
 compra=false;
 venda=false;
 }
