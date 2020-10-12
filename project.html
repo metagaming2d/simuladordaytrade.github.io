@@ -17,9 +17,42 @@
 
 
 
-  <title>Title page</title>  
+  <title>Análise Técnica</title>  
 
 <link href="./main.82cfd66e.css" rel="stylesheet"></head>
+<script>
+    function run() {
+     //   document.getElementById("srt").value = document.getElementById("Ultra").value;
+var moeda_par = document.getElementById("par_moeda").value;
+        if ( moeda_par == "usd") {
+          window.location="index.html";
+        } else if ( moeda_par == "cad") {
+
+          window.location="cad.html";
+        } else if ( moeda_par == "eur") {
+
+          window.location="eur.html";
+        } else if ( moeda_par == "gbp") {
+
+          window.location="gbp.html";
+        } else if ( moeda_par == "ars") {
+
+          window.location="ars.html";
+        } else if ( moeda_par == "chf") {
+
+          window.location="chf.html";
+        } else if ( moeda_par == "aud") {
+
+          window.location="aud.html";
+        } else if ( moeda_par == "cny") {
+
+          window.location="cny.html";
+        } else if ( moeda_par == "ils") {
+
+          window.location="ils.html";
+        } 
+    }
+</script>
 
 <body>
 
@@ -27,36 +60,51 @@
 <header class="">
   <div class="navbar navbar-default visible-xs">
     <button type="button" class="navbar-toggle collapsed">
-      <span class="sr-only">Toggle navigation</span>
+      <span class="sr-only">Menu navigation</span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a href="./index.html" class="navbar-brand">Mashup Template</a>
+    <a href="./index.html" class="navbar-brand">Menu</a>
   </div>
 
   <nav class="sidebar">
     <div class="navbar-collapse" id="navbar-collapse">
-      <div class="site-header hidden-xs">
+      <div class="site-header ">
           <a class="site-brand" href="./index.html" title="">
-            <img class="img-responsive site-logo" alt="" src="./assets/images/mashup-logo.svg">
-            Mashup Template
+            <img class="img-responsive site-logo" alt="" src="./logo.svg">
+            Simulador de Day Trade
           </a>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor.</p>
+        <p>Par de moedas:
+        </p>
+        <select id="par_moeda" onchange="run()">  <!--Call run() function-->
+    <option hidden disabled selected value> --/-- </option>
+     <option value="usd">USD/BRL</option>
+     <option value="cad">CAD/BRL</option>
+     <option value="eur">EUR/BRL</option>
+     <option value="gbp">GBP/BRL</option>
+     <option value="ars">ARS/BRL</option>
+     <option value="chf">CHF/BRL</option>
+     <option value="aud">AUD/BRL</option>
+     <option value="cny">CNY/BRL</option>
+     <option value="ils">ILS/BRL</option>
+
+</select>
       </div>
       <ul class="nav">
         <li><a href="./index.html" title="">Home</a></li>
-        <li><a href="./about.html" title="">About</a></li>
-        <li><a href="./services.html" title="">Services</a></li>
-        <li><a href="./contact.html" title="">Contact</a></li>
-        <li><a href="./components.html" title="">Components</a></li>
+        <li><a href="./about.html" title="">Calendário Econômico</a></li>
+        <li><a href="./services.html" title="">Resumo Técnico</a></li>
+        <li><a href="./contact.html" title="">Conversor de Moeda</a></li>
+        <li><a href="./components.html" title="">Calculadora de Lucro</a></li>
+        <li><a href="./project.html" title="">Estudar Análise Técnica</a></li>
+
 
       </ul>
 
       <nav class="nav-footer">
         <p class="nav-footer-social-buttons">
-          <a class="fa-icon" href="https://www.instagram.com/" title="">
+          <a class="fa-icon" href="https://www.instagram.com/trader.choice" title="">
             <i class="fa fa-instagram"></i>
           </a>
           <a class="fa-icon" href="https://dribbble.com/" title="">
@@ -66,45 +114,201 @@
             <i class="fa fa-twitter"></i>
           </a>
         </p>
-        <p>© Untitled | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+        <p>© Copyright 2020 | TraderChoice</a></p>
       </nav>  
     </div> 
   </nav>
 </header>
+
 <main class="" id="main-collapse">
 
 
 <div class="row">
   <div class="col-xs-12 col-md-8">
 
-    <div class="section-container-spacer">
-        <h1>Project</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.</p>
-    </div>
+    <div class="section-container-spacer" id="top">
+        <h1>Análise Técnica</h1>
+        <p> A Análise Técnica, também conhecida como Análise Gráfica, é uma ferramenta poderosa para encontrar oportunidades no Day Trade.</p><br>
 
+        <a href="#basico">1. Básico (Candles, Topos e Fundos, Suportes/Resistências)</a><br>
+        <a href="#reversao">2. Candles de Reversão</a><br>
+        <a href="#forca">3. Candles de Força</a><br>
+        <a href="#ifr">4. Índice de Força Relativa (IFR)</a><br>
+        <a href="#bollinger">5. Bandas de Bollinger</a><br>
+
+
+    </div>
+<div>
+  <a id="basico"><p>1. Básico da Análise Técnica</p></a>
+  <p><h4>1.1 Candles</h4></p>
+  <p>Cada candle representa a variação dos preços de um papel em um determinado período de tempo.</p>
+  <p>Eles podem representar minutos, horas, dias, semanas, meses, anos. Por exemplo, em um gráfico de 5 minutos, cada candle corresponde a variação do preço no intervalo de 5 minutos.</p>
+  
     <div class="section-container-spacer">
-      <p><img class="img-responsive" alt="" src="./assets/images/img-12.jpg"></p>
+      
       <div class="row">
           <div class="col-xs-12 col-md-6">
-              <p><img class="img-responsive" alt="" src="./assets/images/img-13.jpg"></p>
+              <p><img class="img-responsive" alt="" src="./images/candle-de-alta.webp"></p>
           </div>
           <div class="col-xs-12 col-md-6">
-              <p><img class="img-responsive" alt="" src="./assets/images/img-14.jpg"></p>
+              <p><img class="img-responsive" alt="" src="./images/candle-de-baixa.webp"></p>
           </div>
       </div>
     </div>
 
-    <p> Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-  </div>
-  
+  <p><h4>1.2 Topos e Fundos</h4></p>
+  <p>O preço se movem em zigue-zague no gráfico, subindo e descendo, formando assim topos e fundos.</p>
+
+  <p> Os topos e fundos na análise gráfica nos mostra a tendência principal de um papel.</p>
+  <p> Para ocorrer uma tendência de alta, é necessário que se formem topos e fundos cada vez mais altos.</p>
+  <p> Por outro lado, para ocorrer uma tendência de baixa, é necessário que se formem topos e fundos mais baixos.</p>
+
+
+
+<div class="section-container-spacer">
+      
+      <div class="row">
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/tendencia-alta.png"></p>
+          </div>
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/tendencia-baixa.png"></p>
+          </div>
+      </div>
+    </div>
+  <p><h4>1.3 Suportes e Resistências</h4></p>
+<p>Os Suportes são níveis de preço onde os papéis tendem a parar de cair e voltar a subir, gerando uma oportunidade de compra.</p>
+<p> As Resistências são níveis de preço onde os papéis pararam de subir e voltaram a cair. Quanto mais vezes o preço do papel subir e cair nessa região mais consistente será a resistência. Oportunidade de venda na resistência.</p>
+
+<div class="section-container-spacer">
+      
+      <div class="row">
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/suporte.png"></p>
+          </div>
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/resistencia.png"></p>
+          </div>
+      </div>
+    </div>
+
 </div>
+<a href="#top">Topo</a>
+<div>
+  <a id="reversao"><h4>2. Candles de Reversão</h4></a>
+  <p>Os candles de reversão nos indica que um preço que estava caindo pode voltar a subir, ou que um preço que estava subindo pode voltar a cair.</p>
+  <p>O candle de reversão para alta tem como característica principal um pavio inferior longo abaixo do candle.</p>
+  <p>Isso indica que no período de movimentação do candle houve muito interesse comprador durante a queda, e em algum momento a força compradora voltou a se tornar preponderante e fazendo os preços retomarem.</p>
+
+  <p>O candle de reversão para baixa indica que um preço que estava subindo pode voltar a cair devido à reentrada da pressão vendedora.</p>
+
+  <p>A característica principal do candle de reversão para baixa é um pavio superior longo. Isso revela que depois de alcançada a máxima no preço, a força vendedora naquele nível de preço fez com que se retomasse a queda.<p>
+
+    <div class="section-container-spacer">
+      <p><img class="img-responsive" alt="" src="./images/candle-de-reversao-de-alta-e-baixa.webp"></p>
+      <div class="row">
+
+      </div>
+    </div>
+  <div class="section-container-spacer">
+      
+      <div class="row">
+        
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/reversaoalta.png"></p>
+          </div>
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/reversaobaixa.png"></p>
+          </div>
+      </div>
+  </div>
+
+
+</div>
+<a href="#top">Topo</a>
+ 
+<div>
+<a id="forca"><h4>3. Candles de Força (CF)</h4></a>
+ <p>O Candle de força (CF) mostra a intensidade e o direcionamento da movimento que está em curso. São dois tipos de candle de força: de alta e de baixa.</p>
+
+ <p>O candle de força de alta indica a continuidade do movimento de alta anterior. Uma característica dele é o fechamento próximo da máxima, que mostra o mercado confiante na continuidade do movimento de alta.</p>
+ <p>
+  O candle de força de baixa mostra que um mercado que estava caindo tem grandes chances de continuar o movimento de queda.
+</p>
+  <div class="section-container-spacer">
+      
+      <div class="row">
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/forca-alta.webp" align="center"></p>
+          </div>
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/forca-baixa.webp"></p>
+          </div>
+      </div>
     
 
+   </div>
+</div>
+
+<a href="#top">Topo</a>
+<div>
+<a id="ifr"><h4>4. Índice de Força relativa (IFR/RSI)</h4></a>
+ <p>O IFR (Índice de Força Relativa) mede o fôlego do mercado. O preço dos papéis nunca irão subir ou descer sem parar. O preço em algum momento vai perder a sua força antes de continuar sua tendência principal.</p>
+
+ <p>Quando a linha está próxima do limite superior, isso mostra que a força compradora está perdendo o fôlego e provavelmente o mercado pode começar a cair no curto prazo antes de continuar subindo, uma oportunidade de venda.</p>
+ 
+
+    <div class="section-container-spacer">
+      <p><img class="img-responsive" alt="" src="./images/ifr-alta.png"></p>
+      <div class="row">
+
+      </div>
+    </div>
+
+  <p>Se essa linha chega próximo do limite inferior, isso mostra que a força vendedora está perdendo o fôlego e provavelmente o mercado pode começar a subir no curto prazo antes de continuar caindo, uma oportunidade de compra</p>
+
+      <div class="section-container-spacer">
+      <p><img class="img-responsive" alt="" src="./images/ifr.png"></p>
+      <div class="row">
+
+      </div>
+    </div>
+
+</div>
+<a href="#top">Topo</a>
+<div>
+<a id="bollinger"><h4>5. Bandas de Bollinger</h4></a>
+ <p> As bandas de bollinger são derivadas das médias móveis, muito utilizadas como indicador de volatilidade e informam momentos favoráveis para compra e venda.</p>
+ <p> Os preços dos papéis costumam variar dentro de um padrão, e independente do movimento do preço, ele tende a voltar a um equilíbrio (estreitamento das bandas),e quanto maior a variação do preço, mais afastadas estarão as bandas, indicando também maior volatilidade.</p>
+
+ <p> Devem ser utilizadas em conjunto com outros indicadores complementares como Volume ou Índice de Força Relativa (IFR).</p>
+
+ <p> Uma das várias formas de usar Bandas de Bollinger é na abertura das bandas junto com padrão de candle para confirmar rompimentos após uma consolidação.</p>
+ 
+
+    <div class="section-container-spacer">
+      <p><img class="img-responsive" alt="" src="./images/bb.png"></p>
+      <div class="row">
+
+      </div>
+    </div>
+
+</div>
+
+
+    <div class="section-container-spacer">
+      
+      <div class="row">
+         
+      </div>
+    </div>
+
+  
+  </div>
+
+</div>
+    
+  <a href="#top">Topo</a>
 
 </main>
 
