@@ -54,7 +54,7 @@ var moeda_par = document.getElementById("par_moeda").value;
     }
 </script>
 
-<body>
+<body style="background-color: #FFFFFF">
 
  <!-- Add your content of header -->
 <header class="">
@@ -123,10 +123,12 @@ var moeda_par = document.getElementById("par_moeda").value;
 <main class="" id="main-collapse">
 
 
-<div class="row">
+<div class="row" >
   <div class="col-xs-12 col-md-8">
-
-    <div class="section-container-spacer" id="top">
+<!-- div geral-->
+<div style="background-color: white" >
+<!-- div geral-->
+    <div class="section-container-spacer" id="top" >
         <h1>Análise Técnica</h1>
         <p> A Análise Técnica, também conhecida como Análise Gráfica, é uma ferramenta poderosa para encontrar oportunidades no Day Trade.</p><br>
 
@@ -135,13 +137,16 @@ var moeda_par = document.getElementById("par_moeda").value;
         <a href="#forca">3. Candles de Força</a><br>
         <a href="#ifr">4. Índice de Força Relativa (IFR)</a><br>
         <a href="#bollinger">5. Bandas de Bollinger</a><br>
+        <a href="#pullback">6. Pullback e Throwback</a><br>
+        <a href="#padroes">7. Padrões de Candles</a><br>
+        
 
 
     </div>
 <div>
   <a id="basico"><p>1. Básico da Análise Técnica</p></a>
   <p><h4>1.1 Candles</h4></p>
-  <p>Cada candle representa a variação dos preços de um papel em um determinado período de tempo.</p>
+  <p>Cada candle representa a <b>variação</b> dos preços de um papel em um determinado <b>período</b> de tempo.</p>
   <p>Eles podem representar minutos, horas, dias, semanas, meses, anos. Por exemplo, em um gráfico de 5 minutos, cada candle corresponde a variação do preço no intervalo de 5 minutos.</p>
   
     <div class="section-container-spacer">
@@ -157,11 +162,11 @@ var moeda_par = document.getElementById("par_moeda").value;
     </div>
 
   <p><h4>1.2 Topos e Fundos</h4></p>
-  <p>O preço se movem em zigue-zague no gráfico, subindo e descendo, formando assim topos e fundos.</p>
+  <p>O preço se move em zigue-zague no gráfico, subindo e descendo, formando assim topos e fundos.</p>
 
-  <p> Os topos e fundos na análise gráfica nos mostra a tendência principal de um papel.</p>
-  <p> Para ocorrer uma tendência de alta, é necessário que se formem topos e fundos cada vez mais altos.</p>
-  <p> Por outro lado, para ocorrer uma tendência de baixa, é necessário que se formem topos e fundos mais baixos.</p>
+  <p> Os <b>topos e fundos</b> na análise gráfica nos mostra a <b>tendência principal</b> de um papel.</p>
+  <p> Para ocorrer uma <b>tendência de alta</b>, é necessário que se formem <b>topos e fundos</b> cada vez mais <b>altos</b>.</p>
+  <p> Por outro lado, para ocorrer uma <b>tendência de baixa</b>, é necessário que se formem <b>topos e fundos</b> mais <b>baixos</b>.</p>
 
 
 
@@ -177,8 +182,8 @@ var moeda_par = document.getElementById("par_moeda").value;
       </div>
     </div>
   <p><h4>1.3 Suportes e Resistências</h4></p>
-<p>Os Suportes são níveis de preço onde os papéis tendem a parar de cair e voltar a subir, gerando uma oportunidade de compra.</p>
-<p> As Resistências são níveis de preço onde os papéis pararam de subir e voltaram a cair. Quanto mais vezes o preço do papel subir e cair nessa região mais consistente será a resistência. Oportunidade de venda na resistência.</p>
+<p>Os <b>Suportes</b> são níveis de preço onde os papéis tendem a parar de cair e voltar a subir, gerando uma oportunidade de <b>compra</b>.</p>
+<p> As Resistências são níveis de preço onde os papéis pararam de subir e voltaram a cair. Quanto mais vezes o preço do papel subir e cair nessa região mais consistente será a resistência. Oportunidade de <b>venda</b> na <b>resistência</b>.</p>
 
 <div class="section-container-spacer">
       
@@ -197,12 +202,12 @@ var moeda_par = document.getElementById("par_moeda").value;
 <div>
   <a id="reversao"><h4>2. Candles de Reversão</h4></a>
   <p>Os candles de reversão nos indica que um preço que estava caindo pode voltar a subir, ou que um preço que estava subindo pode voltar a cair.</p>
-  <p>O candle de reversão para alta tem como característica principal um pavio inferior longo abaixo do candle.</p>
-  <p>Isso indica que no período de movimentação do candle houve muito interesse comprador durante a queda, e em algum momento a força compradora voltou a se tornar preponderante e fazendo os preços retomarem.</p>
+  <p>O <b>candle de reversão para alta</b> tem como característica principal um <b>pavio inferior longo</b> abaixo do candle.</p>
+  <p>Isso indica que no período de movimentação do candle houve muito interesse comprador durante a queda, e em algum momento a força compradora voltou a se tornar preponderante,fazendo os preços retomarem.</p>
 
-  <p>O candle de reversão para baixa indica que um preço que estava subindo pode voltar a cair devido à reentrada da pressão vendedora.</p>
+  <p>O <b>candle de reversão para baixa</b> indica que um preço que estava subindo pode voltar a cair devido à reentrada da pressão vendedora.</p>
 
-  <p>A característica principal do candle de reversão para baixa é um pavio superior longo. Isso revela que depois de alcançada a máxima no preço, a força vendedora naquele nível de preço fez com que se retomasse a queda.<p>
+  <p>A característica principal do candle de reversão para baixa é um <b>pavio superior longo</b>. Isso revela que depois de alcançada a máxima no preço, a força vendedora naquele nível de preço fez com que se retomasse a queda.<p>
 
     <div class="section-container-spacer">
       <p><img class="img-responsive" alt="" src="./images/candle-de-reversao-de-alta-e-baixa.webp"></p>
@@ -229,11 +234,11 @@ var moeda_par = document.getElementById("par_moeda").value;
  
 <div>
 <a id="forca"><h4>3. Candles de Força (CF)</h4></a>
- <p>O Candle de força (CF) mostra a intensidade e o direcionamento da movimento que está em curso. São dois tipos de candle de força: de alta e de baixa.</p>
+ <p>O Candle de força (CF) mostra a <b>intensidade</b> e o <b>direcionamento</b> da movimento que está em curso. São dois tipos de candle de força: de alta e de baixa.</p>
 
- <p>O candle de força de alta indica a continuidade do movimento de alta anterior. Uma característica dele é o fechamento próximo da máxima, que mostra o mercado confiante na continuidade do movimento de alta.</p>
+ <p>O <b>candle de força de alta</b> indica a <b>continuidade</b> do movimento de <b>alta</b> anterior. Uma característica dele é o fechamento próximo da máxima, que mostra o mercado confiante na continuidade do movimento de alta.</p>
  <p>
-  O candle de força de baixa mostra que um mercado que estava caindo tem grandes chances de continuar o movimento de queda.
+  O <b>candle de força de baixa</b> mostra que um mercado que estava caindo tem grandes chances de <b>continuar</b> o movimento de <b>queda</b>.
 </p>
   <div class="section-container-spacer">
       
@@ -253,9 +258,9 @@ var moeda_par = document.getElementById("par_moeda").value;
 <a href="#top">Topo</a>
 <div>
 <a id="ifr"><h4>4. Índice de Força relativa (IFR/RSI)</h4></a>
- <p>O IFR (Índice de Força Relativa) mede o fôlego do mercado. O preço dos papéis nunca irão subir ou descer sem parar. O preço em algum momento vai perder a sua força antes de continuar sua tendência principal.</p>
+ <p>O IFR (Índice de Força Relativa) é um indicador que mede o <b>fôlego</b> do mercado. O preço dos papéis nunca irão subir ou descer sem parar. O preço em algum momento vai perder a sua força antes de continuar sua tendência principal.</p>
 
- <p>Quando a linha está próxima do limite superior, isso mostra que a força compradora está perdendo o fôlego e provavelmente o mercado pode começar a cair no curto prazo antes de continuar subindo, uma oportunidade de venda.</p>
+ <p>Quando a linha está próxima do <b>limite superior</b>, isso mostra que a força compradora está perdendo o fôlego e provavelmente o mercado pode <b>começar a cair</b> no curto prazo antes de continuar subindo, uma oportunidade de <b>venda</b>.</p>
  
 
     <div class="section-container-spacer">
@@ -265,7 +270,7 @@ var moeda_par = document.getElementById("par_moeda").value;
       </div>
     </div>
 
-  <p>Se essa linha chega próximo do limite inferior, isso mostra que a força vendedora está perdendo o fôlego e provavelmente o mercado pode começar a subir no curto prazo antes de continuar caindo, uma oportunidade de compra</p>
+  <p>Se essa linha chega próximo do <b>limite inferior</b>, isso mostra que a força vendedora está perdendo o fôlego e provavelmente o mercado pode <b>começar a subir</b> no curto prazo antes de continuar caindo, gerando oportunidade de <b>compra</b>.</p>
 
       <div class="section-container-spacer">
       <p><img class="img-responsive" alt="" src="./images/ifr.png"></p>
@@ -278,12 +283,12 @@ var moeda_par = document.getElementById("par_moeda").value;
 <a href="#top">Topo</a>
 <div>
 <a id="bollinger"><h4>5. Bandas de Bollinger</h4></a>
- <p> As bandas de bollinger são derivadas das médias móveis, muito utilizadas como indicador de volatilidade e informam momentos favoráveis para compra e venda.</p>
+ <p> As bandas de bollinger são derivadas das médias móveis, muito utilizadas como indicador de <b>volatilidade</b> no curto prazo e informam momentos favoráveis para compra e venda.</p>
  <p> Os preços dos papéis costumam variar dentro de um padrão, e independente do movimento do preço, ele tende a voltar a um equilíbrio (estreitamento das bandas),e quanto maior a variação do preço, mais afastadas estarão as bandas, indicando também maior volatilidade.</p>
 
  <p> Devem ser utilizadas em conjunto com outros indicadores complementares como Volume ou Índice de Força Relativa (IFR).</p>
 
- <p> Uma das várias formas de usar Bandas de Bollinger é na abertura das bandas junto com padrão de candle para confirmar rompimentos após uma consolidação.</p>
+ <p> Uma das várias formas de usar Bandas de Bollinger é na <b>abertura das bandas</b> junto com padrão de candle para confirmar <b>rompimentos</b> após uma consolidação.</p>
  
 
     <div class="section-container-spacer">
@@ -302,14 +307,131 @@ var moeda_par = document.getElementById("par_moeda").value;
          
       </div>
     </div>
+<a href="#top">Topo</a>
 
+<div>
+<a id="pullback"><h4>6. Pullback e Throwback</h4></a>
+ <p> O termo Pullback se refere aos <b>recuos</b> que interrompem momentaneamente uma tendência, se apoiando em níveis de suporte que já foram superados. </p>
+ <p> Os traders costumam utilizar o termo Pullback para qualquer retração que é apoiada por um suporte ou resistência para continuar a tendência, no entanto o <b>Pullback</b> deve ser aplicado apenas em <b> tendências de baixa </b>. </p>
+
+ <p>  Os <b>recuos</b> nas <b>tendências de alta</b> se chama <b>Throwback</b>.</p>
+
+   <div class="section-container-spacer">
+      
+      <div class="row">
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/pullback.jpeg" align="center"></p>
+          </div>
+          <div class="col-xs-12 col-md-6">
+              <p><img class="img-responsive" alt="" src="./images/throwback.jpeg"></p>
+          </div>
+      </div>
+    
+
+    </div>
+
+</div>
+
+
+
+
+<a href="#top">Topo</a>
   
   </div>
 
+
+
+<div>
+<a id="padroes"><h4>7. Padrões de Candles</h4></a>
+ <p> O gráfico sempre repete padrões de candles, e reconhecer esses padrões é uma forma de antecipar movimentos para gerar ganhos.</p>
+ 
+<h5> 7.1 Harami </h5>
+
+ <p> O <b>harami</b> é um conhecido padrão de <b>reversão</b> que aprenseta um alto índice de acerto. Ele costuma aparecer após uma tendência definida. </p>
+
+
+   <div class="section-container-spacer">
+       <p><img class="img-responsive" alt="" src="./images/harami.jpg" align="center"></p>
+      <div class="row">
+          <div class="col-xs-12 col-md-6">
+           
+          </div>
+          <div class="col-xs-12 col-md-6">
+           
+          </div>
+      </div>
+    
+
+    </div>
+
+<h5> 7.2 Estrela da Manhã – Estrela da Noite </h5>
+
+<p> Depois de uma tendência, surge um candle grande com pouco ou nenhum pavio. Após esse candle, o preço forma um pequeno doji com pavios medianos. Em seguida, o preço desenha um candle grande com pouco ou nenhum pavio no sentido oposto à tendência anterior, caracterizando uma <b>reversão</b> bastante provável.  </p>
+
+
+<div class="section-container-spacer">
+       <p><img class="img-responsive" alt="" src="./images/estrela.png" align="center"></p>
+      <div class="row">
+          <div class="col-xs-12 col-md-6">
+            <p><img class="img-responsive" alt="" src="./images/sfuoz.png" align="center"></p>
+           
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+           <p><img class="img-responsive" alt="" src="./images/sfuq0.png" align="center"></p>
+          </div>
+      </div>
+    
+
+    </div>
+
+  <h5> 7.3 Engolfo </h5>
+
+<p> É um padrão de <b>reversão</b> no final de tendências e pode ser <b>de alta</b> ou <b>de baixa</b>. Recebe esse nome porque o candle posterior engolfa o candle anterior.</p>
+<p>O candle menor (primeiro) deva estar contido integralmente dentro do candle maior (o segundo). </p>
+
+
+  <div class="section-container-spacer">
+       <p><img class="img-responsive" alt="" src="./images/engolfo.png" align="center"></p>
+      <div class="row">
+          <div class="col-xs-12 col-md-6">
+            
+           
+          </div>
+
+          <div class="col-xs-12 col-md-6">
+          
+          </div>
+      </div>
+    
+
+    </div>
+
+
+</div>
+
+
+
+
+<a href="#top">Topo</a>
+  
+  </div>
+
+
+<div style="background-color: white">
+
+</div>
+
 </div>
     
-  <a href="#top">Topo</a>
+  <!-- div margem direita - ads-->
 
+</div>
+
+
+<!-- div fim geral-->
+</div>
+<!-- div fim geral-->
 </main>
 
 <script>
