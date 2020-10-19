@@ -454,14 +454,14 @@ if (saldo_final > 0) {
  negocios.innerHTML="Negociações: "+nr_negocios;
  performance.innerHTML="Vencedoras: "+performance_vencedora+" ("+valor_vencedora+"%)"+", Perdedoras: "+performance_perdedora+" ("+valor_perdedora+"%)";
 
-getresult=parseFloat(getresult)+parseFloat(saldo_final);
+
 
 if (sessionStorage.saldo_anterior) {
  // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
  //result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
- getresult=parseFloat(getresult)+Number(sessionStorage.saldo_anterior);
+ getresult=Number(sessionStorage.saldo_anterior);
 }
-
+getresult=parseFloat(getresult)+parseFloat(saldo_final);
 result_fechado1.innerHTML="R$ "+getresult.toFixed(2);//+",00";
 sessionStorage.saldo_anterior=getresult.toFixed(2);
 ask_compra.disabled = false;

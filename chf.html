@@ -175,7 +175,7 @@ input[type="submit"][disabled]:hover
 <!-- Add your site or app content here -->
  
 <body>
-  <h4>Simulador de Day Trade - FOREX CHF/BRL - 24h de segunda a sexta.</h4>
+  <h4>Simulador de Day Trade - FOREX CHF/BRL - 24h de segunda a sexta</h4>
 <div>
 <iframe height="480" width="650" frameBorder="0" src="https://ssltvc.forexprostools.com/?pair_ID=1544&height=480&width=650&interval=300&plotStyle=candles&domain_ID=30&lang_ID=12&timezone_ID=10"></iframe>
 </div>
@@ -445,14 +445,14 @@ if (saldo_final_chf > 0) {
  negocios_chf.innerHTML="Negociações: "+nr_negocios_chf;
  performance_chf.innerHTML="Vencedoras: "+performance_vencedora_chf+" ("+valor_vencedora_chf+"%)"+", Perdedoras: "+performance_perdedora_chf+" ("+valor_perdedora_chf+"%)";
 
-getresult_chf=parseFloat(getresult_chf)+parseFloat(saldo_final_chf);
+
 
 if (sessionStorage.saldo_anterior_chf) {
  // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
  //result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
- getresult_chf=parseFloat(getresult_chf)+Number(sessionStorage.saldo_anterior_chf);
+ getresult_chf=Number(sessionStorage.saldo_anterior_chf);
 }
-
+getresult_chf+=parseFloat(saldo_final_chf);
 result_fechado1_chf.innerHTML="R$ "+getresult_chf.toFixed(2);//+",00";
 sessionStorage.saldo_anterior_chf=getresult_chf.toFixed(2);
 ask_compra_chf.disabled = false;

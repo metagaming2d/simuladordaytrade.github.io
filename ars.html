@@ -177,7 +177,7 @@ input[type="submit"][disabled]:hover
 <!-- Add your site or app content here -->
  
 <body>
-  <h4>Simulador de Day Trade - FOREX ARS/BRL - 24h de segunda a sexta.</h4>
+  <h4>Simulador de Day Trade - FOREX ARS/BRL - 24h de segunda a sexta</h4>
 <div>
 <iframe height="480" width="650" frameBorder="0" src="https://ssltvc.forexprostools.com/?pair_ID=1473&height=480&width=650&interval=300&plotStyle=candles&domain_ID=30&lang_ID=12&timezone_ID=10"></iframe>
 </div>
@@ -447,14 +447,14 @@ if (saldo_final_ars > 0) {
  negocios_ars.innerHTML="Negociações: "+nr_negocios_ars;
  performance_ars.innerHTML="Vencedoras: "+performance_vencedora_ars+" ("+valor_vencedora_ars+"%)"+", Perdedoras: "+performance_perdedora_ars+" ("+valor_perdedora_ars+"%)";
 
-getresult_ars=parseFloat(getresult_ars)+parseFloat(saldo_final_ars);
+
 
 if (sessionStorage.saldo_anterior_ars) {
  // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
  //result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
- getresult_ars=parseFloat(getresult_ars)+Number(sessionStorage.saldo_anterior_ars);
+ getresult_ars=Number(sessionStorage.saldo_anterior_ars);
 }
-
+getresult_ars+=parseFloat(saldo_final_ars);
 result_fechado1_ars.innerHTML="R$ "+getresult_ars.toFixed(2);//+",00";
 sessionStorage.saldo_anterior_ars=getresult_ars.toFixed(2);
 ask_compra_ars.disabled = false;

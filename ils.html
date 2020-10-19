@@ -175,7 +175,7 @@ input[type="submit"][disabled]:hover
 <!-- Add your site or app content here -->
  
 <body>
-  <h4>Simulador de Day Trade - FOREX ILS/BRL - 24h de segunda a sexta.</h4>
+  <h4>Simulador de Day Trade - FOREX ILS/BRL - 24h de segunda a sexta</h4>
 <div>
 <iframe height="480" width="650" frameBorder="0" src="https://ssltvc.forexprostools.com/?pair_ID=9678&height=480&width=650&interval=300&plotStyle=candles&domain_ID=30&lang_ID=12&timezone_ID=10"></iframe>
 </div>
@@ -445,14 +445,14 @@ if (saldo_final_ils > 0) {
  negocios_ils.innerHTML="Negociações: "+nr_negocios_ils;
  performance_ils.innerHTML="Vencedoras: "+performance_vencedora_ils+" ("+valor_vencedora_ils+"%)"+", Perdedoras: "+performance_perdedora_ils+" ("+valor_perdedora_ils+"%)";
 
-getresult_ils=parseFloat(getresult_ils)+parseFloat(saldo_final_ils);
+
 
 if (sessionStorage.saldo_anterior_ils) {
  // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
  //result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
- getresult_ils=parseFloat(getresult_ils)+Number(sessionStorage.saldo_anterior_ils);
+ getresult_ils=Number(sessionStorage.saldo_anterior_ils);
 }
-
+getresult_ils+=parseFloat(saldo_final_ils);
 result_fechado1_ils.innerHTML="R$ "+getresult_ils.toFixed(2);//+",00";
 sessionStorage.saldo_anterior_ils=getresult_ils.toFixed(2);
 ask_compra_ils.disabled = false;

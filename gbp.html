@@ -175,7 +175,7 @@ input[type="submit"][disabled]:hover
 <!-- Add your site or app content here -->
  
 <body>
-  <h4>Simulador de Day Trade - FOREX GBP/BRL - 24h de segunda a sexta.</h4>
+  <h4>Simulador de Day Trade - FOREX GBP/BRL - 24h de segunda a sexta</h4>
 <div>
 <iframe height="480" width="650" frameBorder="0" src="https://ssltvc.forexprostools.com/?pair_ID=1736&height=480&width=650&interval=300&plotStyle=candles&domain_ID=30&lang_ID=12&timezone_ID=10"></iframe>
 </div>
@@ -445,14 +445,14 @@ if (saldo_final_gbp > 0) {
  negocios_gbp.innerHTML="Negociações: "+nr_negocios_gbp;
  performance_gbp.innerHTML="Vencedoras: "+performance_vencedora_gbp+" ("+valor_vencedora_gbp+"%)"+", Perdedoras: "+performance_perdedora_gbp+" ("+valor_perdedora_gbp+"%)";
 
-getresult_gbp=parseFloat(getresult_gbp)+parseFloat(saldo_final_gbp);
+
 
 if (sessionStorage.saldo_anterior_gbp) {
  // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
  //result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
- getresult_gbp=parseFloat(getresult_gbp)+Number(sessionStorage.saldo_anterior_gbp);
+ getresult_gbp=Number(sessionStorage.saldo_anterior_gbp);
 }
-
+getresult_gbp+=parseFloat(saldo_final_gbp);
 result_fechado1_gbp.innerHTML="R$ "+getresult_gbp.toFixed(2);//+",00";
 sessionStorage.saldo_anterior_gbp=getresult_gbp.toFixed(2);
 ask_compra_gbp.disabled = false;

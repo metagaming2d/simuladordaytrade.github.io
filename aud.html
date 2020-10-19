@@ -175,7 +175,7 @@ input[type="submit"][disabled]:hover
 <!-- Add your site or app content here -->
  
 <body>
-  <h4>Simulador de Day Trade - FOREX AUD/BRL - 24h de segunda a sexta.</h4>
+  <h4>Simulador de Day Trade - FOREX AUD/BRL - 24h de segunda a sexta</h4>
 <div>
 <iframe height="480" width="650" frameBorder="0" src="https://ssltvc.forexprostools.com/?pair_ID=1485&height=480&width=650&interval=300&plotStyle=candles&domain_ID=30&lang_ID=12&timezone_ID=10"></iframe>
 </div>
@@ -445,14 +445,14 @@ if (saldo_final_aud > 0) {
  negocios_aud.innerHTML="Negociações: "+nr_negocios_aud;
  performance_aud.innerHTML="Vencedoras: "+performance_vencedora_aud+" ("+valor_vencedora_aud+"%)"+", Perdedoras: "+performance_perdedora_aud+" ("+valor_perdedora_aud+"%)";
 
-getresult_aud=parseFloat(getresult_aud)+parseFloat(saldo_final_aud);
+
 
 if (sessionStorage.saldo_anterior_aud) {
  // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
  //result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
- getresult_aud=parseFloat(getresult_aud)+Number(sessionStorage.saldo_anterior_aud);
+ getresult_aud=Number(sessionStorage.saldo_anterior_aud);
 }
-
+getresult_aud+=parseFloat(saldo_final_aud);
 result_fechado1_aud.innerHTML="R$ "+getresult_aud.toFixed(2);//+",00";
 sessionStorage.saldo_anterior_aud=getresult_aud.toFixed(2);
 ask_compra_aud.disabled = false;

@@ -175,7 +175,7 @@ input[type="submit"][disabled]:hover
 <!-- Add your site or app content here -->
  
 <body>
-  <h4>Simulador de Day Trade - FOREX CNY/BRL - 24h de segunda a sexta.</h4>
+  <h4>Simulador de Day Trade - FOREX CNY/BRL - 24h de segunda a sexta</h4>
 <div>
 <iframe height="480" width="650" frameBorder="0" src="https://ssltvc.forexprostools.com/?pair_ID=9493&height=480&width=650&interval=300&plotStyle=candles&domain_ID=30&lang_ID=12&timezone_ID=10"></iframe>
 </div>
@@ -445,14 +445,14 @@ if (saldo_final_cny > 0) {
  negocios_cny.innerHTML="Negociações: "+nr_negocios_cny;
  performance_cny.innerHTML="Vencedoras: "+performance_vencedora_cny+" ("+valor_vencedora_cny+"%)"+", Perdedoras: "+performance_perdedora_cny+" ("+valor_perdedora_cny+"%)";
 
-getresult_cny=parseFloat(getresult_cny)+parseFloat(saldo_final_cny);
+
 
 if (sessionStorage.saldo_anterior_cny) {
  // sessionStorage.saldo_anterior = Number(sessionStorage.saldo_anterior) + saldo_final;
  //result_fechado1.innerHTML="R$ "+Number(sessionStorage.saldo_anterior);
- getresult_cny=parseFloat(getresult_cny)+Number(sessionStorage.saldo_anterior_cny);
+ getresult_cny=Number(sessionStorage.saldo_anterior_cny);
 }
-
+getresult_cny+=parseFloat(saldo_final_cny);
 result_fechado1_cny.innerHTML="R$ "+getresult_cny.toFixed(2);//+",00";
 sessionStorage.saldo_anterior_cny=getresult_cny.toFixed(2);
 ask_compra_cny.disabled = false;
